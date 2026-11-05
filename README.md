@@ -1,2 +1,25 @@
-# Argumentative-Writing-Bootcamp
-H1 Chinese Writing Training 
+# 逻辑大都会 · 议论文建造营
+
+React + Vite 中文互动训练平台。内置参考文档中的 6 道议论文真题。
+
+## 开发
+
+需要 Node.js 22 或更新版本。
+
+```sh
+npm ci
+npm run dev -- --port 5173
+```
+
+```sh
+npm run build
+npx playwright test
+```
+
+浏览器测试需要运行中的开发服务器和 `/usr/bin/chromium`（可在 playwright.config.js 调整）。Word 导入测试使用 tests/fixtures/reference.docx 中保留的原始参考文档。
+
+功能包括四阶段练习、60 分钟计时与暂停、三次提示、合成音效、建造成就、本地持久化、教师 Word 表格导入与预览。教师发布会替换当前浏览器的题库并清空城市记录。
+
+Word 在浏览器本地解析，不使用 AI 或服务器。支持“题目 / 关键词 / 总论点 / 分论点”四列表格；分论点使用“分论点1：”至“分论点3：”标注。已知题目采用参考关键词，其他题目需要教师在预览中用逗号分出三个关键词。
+
+这是可运行的前端原型。无账号认证、云端班级同步、真实 AI 评分；总结阶段仅检查最低字数，需要教师判断内容质量。城市插画为 SVG 等轴积木风，并非 WebGL 3D。完成记录仅保存在当前浏览器；返回大厅会结束当前练习。
